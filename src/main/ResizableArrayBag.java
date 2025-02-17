@@ -102,12 +102,18 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Unimplemented method 'clear'");
+        bag = java.util.Arrays.copyOf(bag, 0);
     }
 
     @Override
     public int getFrequencyOf(T anEntry) {
-        throw new UnsupportedOperationException("Unimplemented method 'getFrequencyOf'");
+        int counter = 0;
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (bag[i].equals(anEntry)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     @Override
