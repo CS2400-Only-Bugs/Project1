@@ -1,6 +1,6 @@
 package main;
 
-public class LinkedBag<T> implements BagInterface {
+public class LinkedBag<T> implements BagInterface<T> {
     @Override
     public int getCurrentSize() {
         // TODO Auto-generated method stub
