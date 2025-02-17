@@ -118,7 +118,12 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public boolean contains(T anEntry) {
-        throw new UnsupportedOperationException("Unimplemented method 'contains'");
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (bag[i].equals(anEntry)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
