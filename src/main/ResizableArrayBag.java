@@ -1,5 +1,28 @@
 package main;
+
 public class ResizableArrayBag<T> implements BagInterface<T> {
+    int numberOfEntries;
+    int capacity;
+    T[] bag;
+    
+
+    @SuppressWarnings("unchecked")
+    public ResizableArrayBag(int capacity) {
+        numberOfEntries = 0;
+        this.capacity = capacity;
+        T[] tempBag = (T[]) new Object[capacity];
+        bag = tempBag;
+    }
+
+    // default constructor if user doesn't specify capacity
+    @SuppressWarnings("unchecked")
+    public ResizableArrayBag() {
+        numberOfEntries = 0;
+        capacity = 10;
+        T[] tempBag = (T[]) new Object[capacity];
+        bag = tempBag;
+    }
+    
     @Override
     public int getCurrentSize() {
         throw new UnsupportedOperationException("Unimplemented method 'getCurrentSize'");
@@ -44,7 +67,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
     public T[] toArray() {
         throw new UnsupportedOperationException("Unimplemented method 'toArray'");
     }
-    
+
     /** 
      * Union method for ResizableArrayBag
      * @return A new bag that contains all entries from 2 bags. 
