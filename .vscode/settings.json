@@ -1,0 +1,13 @@
+{
+    "makefile.configureOnOpen": true,
+    "java.project.sourcePaths": [
+        "lib",
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "/Users/ryanvu/Documents/Project-1/lib/junit-jupiter-engine-5.8.1.jar",
+        "/Users/ryanvu/Documents/Project-1/lib/junit-jupiter-api-5.8.1.jar",
+        "/Users/ryanvu/Documents/Project-1/lib/junit-platform-commons-1.8.1.jar",
+        "/Users/ryanvu/Documents/Project-1/lib/junit-platform-launcher-1.8.1.jar"
+    ]
+}
