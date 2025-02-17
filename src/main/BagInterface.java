@@ -53,7 +53,7 @@ public interface BagInterface<T>
 		@return  A new bag that contains all entries that are in both this bag and anotherBag. */
 	public BagInterface<T> intersection(BagInterface<T> anotherBag);
 	
-	/**  Creates a new collection from the non-overlapping entries of two collections 
+	/**  Creates a new collection from the entries that would be left in this bag after removing the entries that are also in anotherBag.
 		 Note: If x is found 5 times in bag 1 and 3 times in bag 2, the new bag will contain x 2 times.
 		@param anotherBag  The bag that is to be compared.
 		@return  A new bag that contains all entries that are in this bag but not in anotherBag. */
