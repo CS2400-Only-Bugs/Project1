@@ -81,12 +81,23 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public T remove() {
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        T temp = bag[numberOfEntries - 1];
+        bag[numberOfEntries - 1] = null;
+        numberOfEntries--;
+        return temp;
     }
 
     @Override
     public boolean remove(T anEntry) {
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (bag[i].equals(anEntry)) {
+                bag[i] = bag[numberOfEntries - 1];
+                bag[numberOfEntries - 1] = null;
+                numberOfEntries--;
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
