@@ -128,7 +128,9 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public T[] toArray() {
-        throw new UnsupportedOperationException("Unimplemented method 'toArray'");
+        T[] temp;
+        temp = java.util.Arrays.copyOf(bag, numberOfEntries);
+        return temp;
     }
 
     /** 
@@ -136,7 +138,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
      * @return A new bag that contains all entries from 2 bags. 
      */
         public BagInterface<T> union(BagInterface<T> anotherBag) {
-        ResizableArrayBag<T> bag = new ResizableArrayBag<>();
+        ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
 
         T[] thisArray = toArray();
         for (T item : thisArray) {
@@ -155,8 +157,8 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
      * @return A new bag that contains all entries that are in both bags. 
      */
     public BagInterface<T> intersection(BagInterface<T> anotherBag) {
-        ResizableArrayBag<T> bag = new ResizableArrayBag<>();
-        ResizableArrayBag<T> tempBag = new ResizableArrayBag<>();
+        ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
+        ResizableArrayBag<T> tempBag = new ResizableArrayBag<T>();
 
         T[] anotherArray = anotherBag.toArray();
         for (T item : anotherArray) {
@@ -179,7 +181,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
      * @return A new bag that contains all entries that are in this bag but not in anotherBag. 
      */
     public BagInterface<T> difference(BagInterface<T> anotherBag) {
-        ResizableArrayBag<T> bag = new ResizableArrayBag<>();
+        ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
 
         T[] thisArray = toArray();
         for (T item : thisArray) {
