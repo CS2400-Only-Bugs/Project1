@@ -8,21 +8,25 @@ package main;
 public class LinkedBag<T> implements BagInterface<T> {
     private Node firstNode;
     private int numberOfEntries;
+
     /**Creates an empty bag */
     public LinkedBag(){
         firstNode = null;
         numberOfEntries = 0;
     }//end LinkedBag constructor
+
     /**@return the number of entries in the bag */
     @Override
     public int getCurrentSize() {
         return numberOfEntries;
     }//end getCurrentSize
+
     /**@return true if the bag is empty, false otherwise */
     @Override
     public boolean isEmpty() {
         return numberOfEntries == 0;
     }//end isEmpty
+
     /**Adds a new entry to the bag
      * @param newEntry the object to be added as a new entry
      * @return true if the addition is successful, false otherwise */
@@ -34,6 +38,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         numberOfEntries++;
         return true;
     }//end add
+
     /**Removes one unspecified entry from this bag, if possible.
      * @return either the removed entry, if the removal was successful, or null. */
     @Override
@@ -46,6 +51,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return result;
     }//end remove
+
     /** Removes one occurence of a given entry from this bag, if possible.
      * @param anEntry the entry to be removed
      * @return true if the removal was successful, false otherwise. */
@@ -61,6 +67,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return result;
     }//end remove
+
     /**Clears the bag */
     @Override
     public void clear() {
@@ -68,6 +75,7 @@ public class LinkedBag<T> implements BagInterface<T> {
             remove();
         }
     }//end clear
+
     /** Counts the number of times a given entry appears in this bag
      * @param anEntry the entry to be counted
      * @return the number of times anEntry appears in the bag. */
@@ -85,6 +93,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return frequency;
     }//end getFrequencyOf
+
     /**Tests whether the bag contains a specific entry
      * @param anEntry the entry to find
      * @return true if the bag contains anEntry, false otherwise.*/
@@ -101,6 +110,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return found;
     }//end contains
+
     /** Retrives all entries that are in this bag.
      * @return a newly allocated array of all the entries in the bag. Note: If the bag is empty, the returned array is empty.*/
     @Override
@@ -116,6 +126,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return result;
     }//end toArray
+
     /**Union method for LinkedBag
      * @return A new bag that contains all entries from 2 bags.*/
     @Override
@@ -129,6 +140,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return bag;
     }//end union
+
     /**Intersection method for LinkedBag
      * @return A new bag that contains all entries that are in both this bag and anotherBag. */
     @Override
@@ -146,6 +158,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return bag;
     }// end intersection
+
     /**Difference method for LinkedBag
      * @return A new bag that contains all entries that are in this bag but not in anotherBag.*/
     @Override
@@ -159,6 +172,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
         return bag;
     } //end difference
+
     /**Constructors for Node
      * @return the data and next node
      * @param data the data to be stored
@@ -188,6 +202,7 @@ public class LinkedBag<T> implements BagInterface<T> {
             return next;
         }
     } //end Node
+    
     /**
      * Locates a given entry within this bag.
      * @param anEntry the entry to be found
