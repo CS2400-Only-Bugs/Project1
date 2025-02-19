@@ -126,6 +126,20 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
         return false;
     }
 
+    public boolean equals(BagInterface<T> anotherBag) {
+        T[] anotherArray = anotherBag.toArray();
+        if (numberOfEntries != anotherBag.getCurrentSize()) {
+            return false;
+        }
+
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (!bag[i].equals(anotherArray[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public T[] toArray() {
         T[] temp;
