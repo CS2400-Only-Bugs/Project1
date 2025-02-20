@@ -42,13 +42,16 @@ public class BagDriver {
         // Use of Intersection method
         BagInterface<Integer> intersectBag = new ResizableArrayBag<Integer>();
         intersectBag = bag1.intersection(bag2);
-        System.out.println("This is if we only need the items that duplicate from one bag to the other.");
+        System.out.println("This is if we only need the items that duplicate from bag1 to bag2.");
         printBagContents(intersectBag);
 
         // Use of Difference method
         BagInterface<Integer> differenceBag = new ResizableArrayBag<Integer>();
         differenceBag = bag1.difference(bag2);
-        System.out.println("This is if we only need the items that do not duplicate from one bag to the other.");
+        System.out.println("This is if we only need the items from bag1 that are not in bag2.");
+        printBagContents(differenceBag);
+        differenceBag = bag2.difference(bag1);
+        System.out.println("This is if we only need the items from the bag2 that are not in bag1.");
         printBagContents(differenceBag);
     }
 }
