@@ -6,7 +6,6 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
     T[] bag;
     boolean integrityOK = false;
     int maxCapacity = 10000;
-    
 
     @SuppressWarnings("unchecked")
     public ResizableArrayBag(int desiredCapacity) {
@@ -18,7 +17,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
             integrityOK = true;
         } else {
             throw new IllegalStateException("Attempt to create a bag " +
-                "whose capacity exceeds allowed maximum of " + maxCapacity);
+                    "whose capacity exceeds allowed maximum of " + maxCapacity);
         }
     }
 
@@ -147,11 +146,12 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
         return temp;
     }
 
-    /** 
+    /**
      * Union method for ResizableArrayBag
-     * @return A new bag that contains all entries from 2 bags. 
+     * 
+     * @return A new bag that contains all entries from 2 bags.
      */
-        public BagInterface<T> union(BagInterface<T> anotherBag) {
+    public BagInterface<T> union(BagInterface<T> anotherBag) {
         ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
 
         T[] thisArray = toArray();
@@ -168,7 +168,8 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     /**
      * Intersection method for ResizableArrayBag
-     * @return A new bag that contains all entries that are in both bags. 
+     * 
+     * @return A new bag that contains all entries that are in both bags.
      */
     public BagInterface<T> intersection(BagInterface<T> anotherBag) {
         ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
@@ -183,7 +184,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
         for (T item : thisArray) {
             if (tempBag.contains(item)) {
                 bag.add(item);
-                tempBag.remove(item);  // Ensure frequency count is maintained
+                tempBag.remove(item); // Ensure frequency count is maintained
             }
         }
 
@@ -192,7 +193,9 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     /**
      * Difference method for ResizableArrayBag
-     * @return A new bag that contains all entries that are in this bag but not in anotherBag. 
+     * 
+     * @return A new bag that contains all entries that are in this bag but not in
+     *         anotherBag.
      */
     public BagInterface<T> difference(BagInterface<T> anotherBag) {
         ResizableArrayBag<T> bag = new ResizableArrayBag<T>();
@@ -206,7 +209,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
         for (T item : anotherArray) {
             bag.remove(item);
         }
-        
+
         return bag;
     }
 }
