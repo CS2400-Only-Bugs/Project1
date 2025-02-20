@@ -6,13 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import main.BagInterface;
 import main.ResizableArrayBag;
 
 public class ResizableArrayBagTest {
-    ResizableArrayBag<Integer> bag1 = new ResizableArrayBag<Integer>();
-    ResizableArrayBag<Integer> bag2 = new ResizableArrayBag<Integer>();
-    ResizableArrayBag<Integer> emptyBag = new ResizableArrayBag<Integer>();
-    ResizableArrayBag<Integer> nullBag = null;
+    BagInterface<Integer> bag1 = new ResizableArrayBag<Integer>();
+    BagInterface<Integer> bag2 = new ResizableArrayBag<Integer>();
+    BagInterface<Integer> emptyBag = new ResizableArrayBag<Integer>();
+    BagInterface<Integer> nullBag = null;
 
     @BeforeEach
     void setUp() {
@@ -47,7 +48,7 @@ public class ResizableArrayBagTest {
         temp.add(5);
         temp.add(6);
         temp.add(7);
-        assertEquals(temp, bag1.union(bag2), "Standard Union Test");
+        assertEquals(true, temp.equals(bag1.union(bag2)), "Standard Union Test");
     }
 
     @Test
