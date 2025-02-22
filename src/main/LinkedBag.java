@@ -9,27 +9,35 @@ public class LinkedBag<T> implements BagInterface<T> {
     private Node firstNode;
     private int numberOfEntries;
 
-    /**Creates an empty bag */
+    /**
+     * Creates an empty bag 
+     */
     public LinkedBag(){
         firstNode = null;
         numberOfEntries = 0;
     }//end LinkedBag constructor
 
-    /**@return the number of entries in the bag */
+    /**
+     * @return the number of entries in the bag 
+     */
     @Override
     public int getCurrentSize() {
         return numberOfEntries;
     }//end getCurrentSize
 
-    /**@return true if the bag is empty, false otherwise */
+    /**
+     * @return true if the bag is empty, false otherwise 
+     */
     @Override
     public boolean isEmpty() {
         return numberOfEntries == 0;
     }//end isEmpty
 
-    /**Adds a new entry to the bag
+    /**
+     * Adds a new entry to the bag
      * @param newEntry the object to be added as a new entry
-     * @return true if the addition is successful, false otherwise */
+     * @return true if the addition is successful, false otherwise 
+     */
     @Override
     public boolean add(T newEntry) {
         Node newNode = new Node(newEntry, firstNode);
@@ -39,8 +47,10 @@ public class LinkedBag<T> implements BagInterface<T> {
         return true;
     }//end add
 
-    /**Removes one unspecified entry from this bag, if possible.
-     * @return either the removed entry, if the removal was successful, or null. */
+    /**
+     * Removes one unspecified entry from this bag, if possible.
+     * @return either the removed entry, if the removal was successful, or null. 
+     */
     @Override
     public T remove() {
         T result = null;
@@ -52,9 +62,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         return result;
     }//end remove
 
-    /** Removes one occurence of a given entry from this bag, if possible.
+    /** 
+     * Removes one occurence of a given entry from this bag, if possible.
      * @param anEntry the entry to be removed
-     * @return true if the removal was successful, false otherwise. */
+     * @return true if the removal was successful, false otherwise. 
+     */
     @Override
     public boolean remove(T anEntry) {
         boolean result = false;
@@ -68,7 +80,9 @@ public class LinkedBag<T> implements BagInterface<T> {
         return result;
     }//end remove
 
-    /**Clears the bag */
+    /**
+     * Removes all entries from this bag 
+     */
     @Override
     public void clear() {
         while(!isEmpty()){
@@ -76,9 +90,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         }
     }//end clear
 
-    /** Counts the number of times a given entry appears in this bag
+    /** 
+     * Counts the number of times a given entry appears in this bag
      * @param anEntry the entry to be counted
-     * @return the number of times anEntry appears in the bag. */
+     * @return the number of times anEntry appears in the bag. 
+     */
     @Override
     public int getFrequencyOf(T anEntry) {
         int frequency = 0;
@@ -94,9 +110,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         return frequency;
     }//end getFrequencyOf
 
-    /**Tests whether the bag contains a specific entry
+    /**
+     * Tests whether the bag contains a specific entry
      * @param anEntry the entry to find
-     * @return true if the bag contains anEntry, false otherwise.*/
+     * @return true if the bag contains anEntry, false otherwise.
+     */
     @Override
     public boolean contains(T anEntry) {
         boolean found = false;
@@ -111,8 +129,10 @@ public class LinkedBag<T> implements BagInterface<T> {
         return found;
     }//end contains
 
-    /** Retrives all entries that are in this bag.
-     * @return a newly allocated array of all the entries in the bag. Note: If the bag is empty, the returned array is empty.*/
+    /** 
+     * Retrives all entries that are in this bag.
+     * @return a newly allocated array of all the entries in the bag. Note: If the bag is empty, the returned array is empty.
+     */
     @Override
     public T[] toArray() {
         @SuppressWarnings("unchecked")
@@ -127,9 +147,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         return result;
     }//end toArray
 
-    /**Union method for LinkedBag
+    /**
+     * Union method for LinkedBag
      * @param anotherBag The bag to be compared to the original bag
-     * @return A new bag that contains all entries from 2 bags.*/
+     * @return A new bag that contains all entries from 2 bags.
+     */
     @Override
     public BagInterface<T> union(BagInterface<T> anotherBag) {
         LinkedBag<T> bag = new LinkedBag<>();
@@ -142,9 +164,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         return bag;
     }//end union
 
-    /**Intersection method for LinkedBag
+    /**
+     * Intersection method for LinkedBag
      * @param anotherBag The bag to be compared to the original bag
-     * @return A new bag that contains all entries that are in both this bag and anotherBag. */
+     * @return A new bag that contains all entries that are in both this bag and anotherBag. 
+     */
     @Override
     public BagInterface<T> intersection(BagInterface<T> anotherBag) {
         LinkedBag<T> bag = new LinkedBag<>();
@@ -161,9 +185,11 @@ public class LinkedBag<T> implements BagInterface<T> {
         return bag;
     }// end intersection
 
-    /**Difference method for LinkedBag
+    /**
+     * Difference method for LinkedBag
      * @param anotherBag The bag to be compared to the original bag
-     * @return A new bag that contains all entries that are in this bag but not in anotherBag.*/
+     * @return A new bag that contains all entries that are in this bag but not in anotherBag.
+     */
     @Override
     public BagInterface<T> difference(BagInterface<T> anotherBag) {
         LinkedBag<T> bag = new LinkedBag<>();
@@ -176,10 +202,12 @@ public class LinkedBag<T> implements BagInterface<T> {
         return bag;
     } //end difference
 
-    /**Constructors for Node
+    /**
+     * Constructors for Node
      * @return the data and next node
      * @param data the data to be stored
-     * @param next the next node */
+     * @param next the next node 
+     */
     private class Node {
         private T data;
         private Node next;
