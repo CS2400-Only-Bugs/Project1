@@ -5,15 +5,15 @@ public class BagDriver {
 
     public static void printBagContents(BagInterface<Integer> bag) {
         Object[] tempArray = bag.toArray();
-        if (tempArray.length == 0) {
-            System.out.println("[]");
-        } else {
-            System.out.print("[");
-            for (int i = 0; i < tempArray.length - 1; i++) {
-                System.out.print(tempArray[i] + ", ");
-            }
-            System.out.print(tempArray[tempArray.length - 1] + "]\n");
+        System.out.print("[");
+        for (int i = 0; i < tempArray.length; i++) {
+            if (i == 0) {
+                System.out.print(tempArray[i]);
+                continue;
+            } 
+            System.out.print(", " + tempArray[i]);
         }
+        System.out.print("]\n");
     }
 
     public static void main(String[] args) {
