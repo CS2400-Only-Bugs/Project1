@@ -128,6 +128,7 @@ public class LinkedBag<T> implements BagInterface<T> {
     }//end toArray
 
     /**Union method for LinkedBag
+     * @param anotherBag The bag to be compared to the original bag
      * @return A new bag that contains all entries from 2 bags.*/
     @Override
     public BagInterface<T> union(BagInterface<T> anotherBag) {
@@ -142,6 +143,7 @@ public class LinkedBag<T> implements BagInterface<T> {
     }//end union
 
     /**Intersection method for LinkedBag
+     * @param anotherBag The bag to be compared to the original bag
      * @return A new bag that contains all entries that are in both this bag and anotherBag. */
     @Override
     public BagInterface<T> intersection(BagInterface<T> anotherBag) {
@@ -160,6 +162,7 @@ public class LinkedBag<T> implements BagInterface<T> {
     }// end intersection
 
     /**Difference method for LinkedBag
+     * @param anotherBag The bag to be compared to the original bag
      * @return A new bag that contains all entries that are in this bag but not in anotherBag.*/
     @Override
     public BagInterface<T> difference(BagInterface<T> anotherBag) {
