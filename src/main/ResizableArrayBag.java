@@ -13,12 +13,15 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
      */
     @SuppressWarnings("unchecked")
     public ResizableArrayBag(int desiredCapacity) {
-        if (desiredCapacity <= maxCapacity) {
+        if (desiredCapacity <= maxCapacity && desiredCapacity >= 0) {
             numberOfEntries = 0;
             capacity = desiredCapacity;
             T[] tempBag = (T[]) new Object[capacity];
             bag = tempBag;
             integrityOK = true;
+        } else if (desiredCapacity < 0) {
+            throw new IllegalStateException("Attempt to create a bag " +
+                "whose capacity is negative");
         } else {
             throw new IllegalStateException("Attempt to create a bag " +
                     "whose capacity exceeds allowed maximum of " + maxCapacity);
