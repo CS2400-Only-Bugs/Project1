@@ -66,10 +66,16 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
     }
 
     private void doubleCapacity() {
-        int newCapacity = 2 * capacity;
-        checkCapacity(newCapacity);
-        bag = java.util.Arrays.copyOf(bag, newCapacity);
-        capacity = newCapacity;
+        int newCapacity;
+        if (capacity == 0) {
+            newCapacity = 1;
+            bag = java.util.Arrays.copyOf(bag, newCapacity);
+        } else {
+            newCapacity = 2 * capacity;
+            checkCapacity(newCapacity);
+            bag = java.util.Arrays.copyOf(bag, newCapacity);
+            capacity = newCapacity;
+        }
     }
 
     private void checkCapacity(int capacity) {
@@ -80,10 +86,14 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public T remove() {
-        T temp = bag[numberOfEntries - 1];
-        bag[numberOfEntries - 1] = null;
-        numberOfEntries--;
-        return temp;
+        if (bag.length == 0) {
+            return null;
+        } else {
+            T temp = bag[numberOfEntries - 1];
+            bag[numberOfEntries - 1] = null;
+            numberOfEntries--;
+            return temp;
+        }
     }
 
     @Override
