@@ -13,10 +13,10 @@
     - **Username:** FunkeyMonk
     - **Role/Contribution:**
 
-- **Name:** Member 3
-    - **Email:** member3@example.com
-    - **Username:** member3username
-    - **Role/Contribution:**
+- **Name:** Ryan Vu
+    - **Email:** ryanvu@cpp.edu
+    - **Username:** RyanVu612
+    - **Role/Contribution:** ResizableArrayBag, BagInterface
 
 ## Screencast
 - **Link:** Link
