@@ -16,7 +16,7 @@
 - **Name:** Ryan Vu
     - **Email:** ryanvu@cpp.edu
     - **Username:** RyanVu612
-    - **Role/Contribution:** Group Lead, ResizableArrayBag, BagInterface
+    - **Role/Contribution:** Project Lead, ResizableArrayBag, BagInterface, ResizableArrayTest
 
 ## Screencast
 - **Link:** Link
