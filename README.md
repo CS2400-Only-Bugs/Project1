@@ -11,7 +11,7 @@
 - **Name:** Jordan Fleming
     - **Email:** fleming@cpp.edu
     - **Username:** FunkeyMonk
-    - **Role/Contribution:**
+    - **Role/Contribution:** BagDriver, LinkedBagTest
 
 - **Name:** Ryan Vu
     - **Email:** ryanvu@cpp.edu
