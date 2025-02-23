@@ -1,4 +1,4 @@
-### Group Name
+### Only Bugs
 
 ### Extra Features
 
@@ -6,7 +6,7 @@
 - **Name:** Jayden Briones
     - **Email:** jpbriones@cpp.edu
     - **Username:** Jaypb101
-    - **Role/Contribution:**
+    - **Role/Contribution:** LinkedBag, ResizableArrayBag
 
 - **Name:** Jordan Fleming
     - **Email:** fleming@cpp.edu
