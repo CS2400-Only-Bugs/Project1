@@ -11,7 +11,7 @@
 - **Name:** Jordan Fleming
     - **Email:** fleming@cpp.edu
     - **Username:** FunkeyMonk
-    - **Role/Contribution:** Screencast, Time Complexity Table, BagDriver, LinkedBagTest
+    - **Role/Contribution:** Screencast, Time Complexity Doc, BagDriver, LinkedBagTest
 
 - **Name:** Ryan Vu
     - **Email:** ryanvu@cpp.edu
