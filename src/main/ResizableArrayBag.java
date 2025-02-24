@@ -156,6 +156,7 @@ public class ResizableArrayBag<T> implements BagInterface<T> {
         while (!isEmpty()) {
             remove();
         }
+        numberOfEntries = 0;
     }
 
     /** 

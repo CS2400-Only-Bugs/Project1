@@ -88,6 +88,7 @@ public class LinkedBag<T> implements BagInterface<T> {
         while(!isEmpty()){
             remove();
         }
+        numberOfEntries = 0;
     }//end clear
 
     /** 
